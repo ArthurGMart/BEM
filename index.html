@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>palindroom</title>
+
+  </head>
+
+  <button onclick="reload()">Kies een woord</button>
+
+<a id="demo"></a>
+
+  <body>
+    <script>
+
+
+function palindroom(){
+  var str = prompt ("Check of jouw woord een palindroom is.","Lepel");
+
+  var symbool  = (/[^A-Za-z0-9]/g);
+
+  var KleineLetters = str.toLowerCase().replace(symbool, '');
+
+  var strdraai = KleineLetters.split('').reverse().join('');
+
+  return strdraai === KleineLetters;
+
+}
+
+function reload(){
+  location.reload();
+
+}
+
+document.getElementById("demo").innerHTML = palindroom();
+
+    </script>
+
+  </body>
+
+</html>
